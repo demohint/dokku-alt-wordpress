@@ -1,0 +1,15 @@
+wp:
+    service:
+        image: komljen/wordpress
+        name: wp
+        port: "80"
+    images:
+        - ubuntu
+        - mysql
+        - apache
+        - php-apache
+        - wordpress
+    links:
+        - image: komljen/mysql
+          name: mysql-wp
+          alias: mysql
